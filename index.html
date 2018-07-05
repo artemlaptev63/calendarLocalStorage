@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+    <script>
+        window.onload = function () {
+            var td, k;
+            td = document.querySelectorAll("table td");
+            k = td.length;
+            while (k--) {
+                td[k].setAttribute('newID', k);
+                td[k].onclick = clickTD;
+                var item = localStorage.getItem(k);
+                if (item == null) {
+                    td[k].classList.add('empty');
+                } else {
+                    td[k].classList.add(item);
+                }
+            };
+        };
+        function clickTD() {
+            if (this.className == "empty") {
+                this.className = "grey"
+            }
+            else if (this.className == "grey") {
+                this.className = "blue"
+            }
+            else if (this.className == "blue") {
+                this.className = "black"
+            }
+            else if (this.className == "black") {
+                this.className = "green"
+            }
+            else {
+                this.className = "empty"
+            }
+            var td = document.querySelectorAll("table td");
+            var k = td.length;
+            while (k--) {
+                td[k].getAttribute('newID');
+                localStorage.setItem(k, td[k].className);
+            };
+        };
+    </script>
+</head>
+
+<body>
+    <h1>Calendar with localStorage</h1>
+    <div id="green"></div>
+    <span>green</span>
+    <br />
+    <div id='grey'></div>
+    <span>grey</span>
+    <br />
+    <div id="blue"></div>
+    <span>blue</span>
+    <br />
+    <div id="black"></div>
+    <span>black</span>
+    <br />
+    <table>
+        <h2>January</h2>
+        <tr>
+            <td>10</td>
+            <td>11</td>
+            <td>12</td>
+            <td>13</td>
+            <td>14</td>
+        </tr>
+        <tr>
+            <td>15</td>
+            <td>16</td>
+            <td>17</td>
+            <td>18</td>
+            <td>19</td>
+            <td>20</td>
+            <td>21</td>
+        </tr>
+        <tr>
+            <td>22</td>
+            <td>23</td>
+            <td>24</td>
+            <td>25</td>
+            <td>26</td>
+            <td>27</td>
+            <td>28</td>
+        </tr>
+        <tr>
+            <td>29</td>
+            <td>30</td>
+            <td>31</td>
+        </tr>
+    </table>
+    <table>
+        <h2>February</h2>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+            <td>7</td>
+        </tr>
+        <tr>
+            <td>8</td>
+            <td>9</td>
+            <td>10</td>
+            <td>11</td>
+            <td>12</td>
+            <td>13</td>
+            <td>14</td>
+        </tr>
+        <tr>
+            <td>15</td>
+            <td>16</td>
+            <td>17</td>
+            <td>18</td>
+            <td>19</td>
+            <td>20</td>
+            <td>21</td>
+        </tr>
+        <tr>
+            <td>22</td>
+            <td>23</td>
+            <td>24</td>
+            <td>25</td>
+            <td>26</td>
+            <td>27</td>
+            <td>28</td>
+        </tr>
+    </table>
+    <table>
+        <h2>May</h2>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+            <td>7</td>
+        </tr>
+        <tr>
+            <td>8</td>
+            <td>9</td>
+            <td>10</td>
+            <td>11</td>
+            <td>12</td>
+            <td>13</td>
+            <td>14</td>
+        </tr>
+        <tr>
+            <td>15</td>
+            <td>16</td>
+            <td>17</td>
+            <td>18</td>
+            <td>19</td>
+            <td>20</td>
+            <td>21</td>
+        </tr>
+        <tr>
+            <td>22</td>
+            <td>23</td>
+            <td>24</td>
+            <td>25</td>
+            <td>26</td>
+            <td>27</td>
+            <td>28</td>
+        </tr>
+        <tr>
+            <td>29</td>
+            <td>30</td>
+            <td>31</td>
+        </tr>
+    </table>
+</body>
+
+</html>
